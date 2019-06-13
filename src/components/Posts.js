@@ -37,8 +37,13 @@ export class Posts extends Component{
                 </Container>
         );
         }
-        return <h3>Loading...</h3>
-
+        return (
+                <Container className="d-none d-sm-block text-body mb-5 align-self-center col-lg-7">
+                    {posts.map(post => (
+                        <PostItem key = {post.id} post = {post}>  </PostItem>
+                    ))}
+                </Container>
+        );
     }
 }
 
