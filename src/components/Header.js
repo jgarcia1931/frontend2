@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '/Users/manuel/Desktop/blog/frontend2/src/main.css';
+import '../main.css';
 import {Link} from "react-router-dom";
 
 export class Header extends Component{

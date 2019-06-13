@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import PostItem from './PostItem'
-import '/Users/manuel/Desktop/blog/frontend2/src/main.css';
+import '../main.css';
 import Container from "react-bootstrap/Container";
 
 
