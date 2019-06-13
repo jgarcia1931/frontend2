@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment} from 'react';
 import './App.css';
+import Posts from './components/Posts'
+import PostPage from './components/PostPage'
+import EmbeddedGist from "./components/EmbeddedGist";
+import WeatherApp from "./components/WeatherApp"
+import { BrowserRouter, Route} from "react-router-dom";
+import {Header} from "./components/Header";
+import Container from "react-bootstrap/Container";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+
+    render() {
+        return (
+
+            <BrowserRouter>
+                <Fragment>
+                    <Header/>
+                    <Route exact path={"/"} component={Posts}/>
+                    <Route exact path={"/post/:id"} component={PostPage}/>
+                </Fragment>
+            </BrowserRouter>
+
+        );
+    };
 }
 
 export default App;
