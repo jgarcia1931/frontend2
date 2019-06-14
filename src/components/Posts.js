@@ -13,7 +13,7 @@ export class Posts extends Component{
 
     // Life cycle method where you make initial request
     componentDidMount() {
-        axios.get('http://3.208.128.112/wp-json/wp/v2/posts')
+        axios.get('http://blog.somelitecoding.com/wp-json/wp/v2/posts')
             .then(res => this.setState({
                 posts: res.data,
                 isLoaded: true
