@@ -25,8 +25,6 @@ export class Posts extends Component{
     render() {
         // Logs on console good for testing...
 
-        console.log(this.state);
-
         const {posts, isLoaded} = this.state
         if (isLoaded) {
             return (

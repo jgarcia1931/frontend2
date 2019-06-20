@@ -9,36 +9,47 @@ import Container from "react-bootstrap/Container";
 
 export class PostPage extends Component{
 
-    state = {
-        posts: [],
-        isLoaded: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: this.props.match.params.id,
+            title: "",
+            content: "",
+            id_act: "",
+            isLoaded: false
+        };
     }
+
+    // state = {
+    //     posts: [],
+    //     isLoaded: false
+    // }
 
     // Life cycle method where you make initial request
     componentDidMount() {
-        axios.get('https://blog.somelitecoding.com/wp-json/wp/v2/posts')
+        axios.get('https://blog.somelitecoding.com/wp-json/wp/v2/posts/' + this.state.id)
             .then(res => this.setState({
-                posts: res.data,
+                title: res.data.title,
+                content: res.data.content,
+                id_act: res.data.id,
                 isLoaded: true
             }))
             .catch(err => console.log(err));
     }
 
     render() {
-        var postIndex =  0;
-        const {posts, isLoaded} = this.state;
-        for (var i = 0; i < posts.length; i++) {
-            if (posts[i].id == this.props.match.params.id){
-                postIndex = i;
-            }
-        }
-
+        // var postIndex =  0;
+        // const {posts, isLoaded} = this.state;
+        // for (var i = 0; i < posts.length; i++) {
+        //     if (posts[i].id == this.props.match.params.id){
+        //         postIndex = i;
+        //     }
+        // }
 
         function testFunc(arStr1) {
             if (arStr1.includes('WeatherApp')) {
                 return <WeatherApp/>
             } else if (arStr1.search("github.com/")>=0) {
-                    debugger;
                 var startFileName = arStr1.search("startfile")+9;
                 var endFileName = arStr1.search("end");
 
@@ -57,91 +68,14 @@ export class PostPage extends Component{
             }
         }
 
+        const {isLoaded, title, content, id, id_act} = this.state;
+
         if (isLoaded) {
-            const {title, content, id} = posts[postIndex];
+            // const {title, content, id} = posts[postIndex];
 
             var strCurr  = content.rendered;
-
-            // var arStr = [];
-            // var i;
-            // for (i = 0; i < 50; i++) {
-            //     var paragraphSpace = strCurr.search("<p>")
-            //     var header2Space   = strCurr.search("<h2>")
-            //     var imageSpace     = strCurr.search("<figure")
-            //     var appPosition    = strCurr.search("<code>")
-            //     var findScript     = strCurr.search("<script")
-            //
-            //     if (paragraphSpace == -1) {
-            //         // eslint-disable-next-line no-unused-expressions
-            //         paragraphSpace = 999999;
-            //     }
-            //     if (header2Space == -1) {
-            //         // eslint-disable-next-line no-unused-expressions
-            //         header2Space = 999999;
-            //     }
-            //     if (imageSpace == -1) {
-            //         // eslint-disable-next-line no-unused-expressions
-            //         imageSpace = 999999;
-            //     }
-            //     if (appPosition == -1) {
-            //         // eslint-disable-next-line no-unused-expressions
-            //         appPosition = 999999
-            //     }
-            //     if (findScript == -1) {
-            //         findScript = 999999
-            //     }
-            //     // debugger;
-            //
-            //
-            //
-            //     var minIdxVal = Math.min(paragraphSpace, header2Space, imageSpace, appPosition, findScript);
-            //
-            //     if (minIdxVal==999999){
-            //         break;
-            //     }
-            //
-            //     if (minIdxVal!=999999) {
-            //         if (paragraphSpace == minIdxVal) {
-            //             var n = strCurr.search("<p>");
-            //             var n2 = strCurr.search("</p>");
-            //             var str2 = strCurr.slice(n, n2 + 4);
-            //             arStr.push(str2);
-            //             strCurr = strCurr.slice(n2 + 4);
-            //         } else if (header2Space == minIdxVal) {
-            //             var n = strCurr.search("<h2>");
-            //             var n2 = strCurr.search("</h2>");
-            //             var str2 = strCurr.slice(n, n2 + 5);
-            //             arStr.push(str2);
-            //             strCurr = strCurr.slice(n2 + 4);
-            //         } else if (imageSpace == minIdxVal) {
-            //             var n = strCurr.search("<figure");
-            //             var n2 = strCurr.search("</figure>");
-            //             var str2 = strCurr.slice(n , n2+9);
-            //             // str2 = str2;
-            //             arStr.push(str2);
-            //             strCurr = strCurr.slice(n2 + 6);
-            //         } else if (appPosition == minIdxVal) {
-            //             var n = strCurr.search("<code>");
-            //             var n2 = strCurr.search("</code>");
-            //             var str2 = strCurr.slice(n + 6, n2);
-            //             // str2 = str2;
-            //             arStr.push(str2);
-            //             strCurr = strCurr.slice(n2 + 6);
-            //         } else if (findScript == minIdxVal) {
-            //             var n = strCurr.search("<script")
-            //             var n2 = strCurr.search("</script>");
-            //             var str2 = strCurr.slice(n + 6, n2);
-            //             // str2 = str2;
-            //             arStr.push(str2);
-            //             strCurr = strCurr.slice(n2 + 9);
-            //
-            //         }
-            //     }
-            // }
-
             // --------------------------------------------------------------
             var arStr = strCurr.split('\n\n\n\n');
-            debugger;
             // --------------------------------------------------------------
             return (
                 <Container className="mt-4 d-none d-sm-block text-left mb-5 align-self-center col-lg-7">
@@ -156,7 +90,6 @@ export class PostPage extends Component{
             );
         }
         return <p>Loading...</p>
-
     }
 }
 
