@@ -71,6 +71,7 @@ export class PostPage extends Component{
         const {isLoaded, title, content, id, id_act} = this.state;
 
         if (isLoaded) {
+            debugger;
             // const {title, content, id} = posts[postIndex];
 
             var strCurr  = content.rendered;

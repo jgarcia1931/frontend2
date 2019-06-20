@@ -4,7 +4,6 @@ import PostItem from './PostItem'
 import '../main.css';
 import Container from "react-bootstrap/Container";
 
-
 export class Posts extends Component{
     state = {
         posts: [],
@@ -27,8 +26,9 @@ export class Posts extends Component{
 
         const {posts, isLoaded} = this.state
         if (isLoaded) {
+            debugger;
             return (
-                <Container className="d-none d-sm-block text-body mb-5 align-self-center col-lg-7">
+                <Container className=" text-body align-self-center col-lg-7">
                     {posts.map(post => (
                         <PostItem key = {post.id} post = {post}>  </PostItem>
                     ))}

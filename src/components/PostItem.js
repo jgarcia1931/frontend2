@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactHtmlParser from 'react-html-parser';
-import { Link } from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import PostPage from "./PostPage";
 
 export class PostItem extends Component{
     constructor(props) {
@@ -16,14 +17,24 @@ export class PostItem extends Component{
 
     render() {
         const {title, content, id, excerpt} = this.state;
+        debugger;
 
         return (
             <div>
-                <Link to={`/post/${id}`}>
+                <Link to={{
+                    pathname: `/post/${id}`,
+                    state: {
+                        title: title,
+                        content: content,
+                        id: id,
+                        excerpt: excerpt
+                    }
+                }}>
                     <h3>{title.rendered}</h3>
                 </Link>
                 <p dangerouslySetInnerHTML={{__html: excerpt.rendered}}/>
                 <hr/>
+
             </div>
 
         );
