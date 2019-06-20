@@ -79,7 +79,7 @@ export class PostPage extends Component{
             var arStr = strCurr.split('\n\n\n\n');
             // --------------------------------------------------------------
             return (
-                <Container className="mt-4 d-none d-sm-block text-left mb-5 align-self-center col-lg-7">
+                <Container className= "text-body align-self-center col-lg-7">
                     <Fragment>
                         <Link to={`/`}>Go Back</Link>
                         <hr/>
