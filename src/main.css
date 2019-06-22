@@ -1,23 +1,24 @@
 /* Header */
 
 	#header {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
+		/*display: -moz-flex;*/
+		/*display: -webkit-flex;*/
+		/*display: -ms-flex;*/
 		display: flex;
-		-moz-align-items: center;
-		-webkit-align-items: center;
-		-ms-align-items: center;
+		/*-moz-align-items: center;*/
+		/*-webkit-align-items: center;*/
+		/*-ms-align-items: center;*/
 		align-items: center;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
-		justify-content: center;
-		position: relative;
-		height: 30em;
+		/*-moz-justify-content: center;*/
+		/*-webkit-justify-content: center;*/
+		/*-ms-justify-content: center;*/
+		/*justify-content: center;*/
+		/*position: relative;*/
+		height: 20em;
 		background: url("images/Picture1.png") left;
-		background-size: cover;
-		padding: 0;
+		/*background-size: cover;*/
+		/*padding: 0;*/
+		max-width: 100%;
 	}
 
 /* Logo */
@@ -30,6 +31,7 @@
 	}
 
 		#logo h1 {
+			mix-blend-mode: difference;
 			font-weight: 900;
 			/*text-transform: uppercase;*/
 			color: #fff;
@@ -39,6 +41,7 @@
 
 		#logo p {
 			color: #eee;
+			mix-blend-mode: difference;
 			color: rgba(255, 255, 255, 0.5);
 			text-transform: uppercase;
 			margin: 1.25em 0 0 0;
@@ -46,14 +49,6 @@
 			letter-spacing: 0.2em;
 			font-size: 0.9em;
 		}
-	#poststyle h3 {
-		font-weight: 900;
-		/*text-transform: uppercase;*/
-		color: #000000;
-		font-size: 2em;
-		/*letter-spacing: 0em;*/
-	}
-
 
 /* Nav */
 
@@ -79,32 +74,32 @@
 				padding: 0 1.5em 0 1.5em;
 			}
 
-				#nav > ul > li > ul {
-					display: none;
-				}
+				/*#nav > ul > li > ul {*/
+					/*display: none;*/
+				/*}*/
 
 				#nav > ul > li > a, #nav > ul > li > span {
-					display: block;
-					color: #eee;
+					/*display: block;*/
+					/*color: #eee;*/
 					color: rgba(255, 255, 255, 0.75);
 					text-transform: uppercase;
-					text-decoration: none;
+					/*text-decoration: none;*/
 					font-size: 0.7em;
 					letter-spacing: 0.25em;
-					height: 5em;
+					/*height: 5em;*/
 					line-height: 5em;
-					-moz-transition: all .25s ease-in-out;
-					-webkit-transition: all .25s ease-in-out;
-					-o-transition: all .25s ease-in-out;
-					-ms-transition: all .25s ease-in-out;
-					transition: all .25s ease-in-out;
-					outline: 0;
+					/*-moz-transition: all .25s ease-in-out;*/
+					/*-webkit-transition: all .25s ease-in-out;*/
+					/*-o-transition: all .25s ease-in-out;*/
+					/*-ms-transition: all .25s ease-in-out;*/
+					/*transition: all .25s ease-in-out;*/
+					/*outline: 0;*/
 				}
 
 				#nav > ul > li:hover > a {
 					color: #fff;
 				}
 
-				#nav > ul > li.active > a, #nav > ul > li.active > span {
-					color: #fff;
-				}
+				/*#nav > ul > li.active > a, #nav > ul > li.active > span {*/
+					/*color: #fff;*/
+				/*}*/

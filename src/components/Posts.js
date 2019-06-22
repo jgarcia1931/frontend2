@@ -26,7 +26,6 @@ export class Posts extends Component{
 
         const {posts, isLoaded} = this.state
         if (isLoaded) {
-            debugger;
             return (
                 <Container className=" text-body align-self-center col-lg-7">
                     {posts.map(post => (
