@@ -16,7 +16,7 @@
 		/*position: relative;*/
 		height: 20em;
 		background: url("images/Picture1.png") left;
-		/*background-size: cover;*/
+		background-size: contain;
 		/*padding: 0;*/
 		max-width: 100%;
 	}
