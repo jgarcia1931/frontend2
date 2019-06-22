@@ -7,7 +7,7 @@ import WeatherApp from "./components/WeatherApp"
 import { BrowserRouter, Route} from "react-router-dom";
 import {Header} from "./components/Header";
 import Container from "react-bootstrap/Container";
-import {Products} from "../components/analysis/Products";
+import {Products} from "../src/components/analysis/Products.js";
 
 class App extends Component {
 
