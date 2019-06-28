@@ -25,15 +25,16 @@ export class Products extends Component {
 
     // Life cycle method where you make initial request
     getSectAnalysis = async (e) => {
+            debugger;
         e.preventDefault();
-        const section1 = e.target.elements.section1.value;
-        const section2 = e.target.elements.section2.value;
-        const section3 = e.target.elements.section3.value;
-        const section4 = e.target.elements.section4.value;
-        const section5 = e.target.elements.section5.value;
-        const section6 = e.target.elements.section6.value;
-        const section7 = e.target.elements.section7.value;
-        const section8 = e.target.elements.section8.value;
+        const section1 = e.target.elements.section1.value ? e.target.elements.section1.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section2 = e.target.elements.section2.value ? e.target.elements.section2.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section3 = e.target.elements.section3.value ? e.target.elements.section3.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section4 = e.target.elements.section4.value ? e.target.elements.section4.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section5 = e.target.elements.section5.value ? e.target.elements.section5.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section6 = e.target.elements.section6.value ? e.target.elements.section6.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section7 = e.target.elements.section7.value ? e.target.elements.section7.value : '[[0.0,  0.0], 0.0, 0.0]'
+        const section8 = e.target.elements.section8.value ? e.target.elements.section8.value : '[[0.0,  0.0], 0.0, 0.0]'
 
         var bodyFormData = new FormData();
         bodyFormData.set('section1', section1)
