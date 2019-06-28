@@ -5,7 +5,7 @@ import PostPage from './components/PostPage'
 import { BrowserRouter, Route} from "react-router-dom";
 import {Header} from "./components/Header";
 import {Products} from "./components/analysis/Products";
-import {IrisApp} from "./components/irisflower/IrisApp.js";
+// import {IrisApp} from "./components/irisflower/IrisApp.js";
 
 
 
