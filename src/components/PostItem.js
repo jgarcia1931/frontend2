@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import ReactHtmlParser from 'react-html-parser';
 import {Link, Route} from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import PostPage from "./PostPage";
 
 export class PostItem extends Component{
     constructor(props) {

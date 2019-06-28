@@ -3,7 +3,6 @@ import axios from 'axios'
 import  {Link} from "react-router-dom";
 import ReactHtmlParser from 'react-html-parser';
 import WeatherApp from "./WeatherApp";
-import Weather from "./Weather";
 import EmbeddedGist from "./EmbeddedGist";
 import Container from "react-bootstrap/Container";
 

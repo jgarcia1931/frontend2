@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import '../main.css';
 import {Link} from "react-router-dom";
-import '../bootstrap.css';
-import { Container, Image} from 'react-bootstrap';
 
 export class Header extends Component{
 

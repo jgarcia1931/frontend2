@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import '../../main.css';
 import Plot from 'react-plotly.js';
 import Container from "react-bootstrap/Container";
 import axios from "axios";
