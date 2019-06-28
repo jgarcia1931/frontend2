@@ -242,13 +242,13 @@ export class Products extends Component {
                     <h1>test</h1>
                     <form onSubmit={this.getSectAnalysis}>
                         <div>
-                            <input type="text" name="section1" value='[[0.0,  0.0], 0.3, 5.]'/>
+                            <input type="text" name="section1" placeholder="[[0.0,  0.0], 0.3, 5.]"/>
                         </div>
                         <div>
-                            <input type="text" name="section2" value='[[0.3,  0.0], 4.0, 0.3]'/>
+                            <input type="text" name="section2" placeholder="[[0.3,  0.0], 4.0, 0.3]"/>
                         </div>
                         <div>
-                            <input type="text" name="section3" value='[[0.3,  2.0], 4.0, 0.3]'/>
+                            <input type="text" name="section3" placeholder="[[0.3,  2.0], 4.0, 0.3]"/>
                         </div>
                         <div>
                             <input type="text" name="section4" placeholder="[[0.0,  0.0], 0.0, 0.0]"/>
