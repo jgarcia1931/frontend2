@@ -35,16 +35,27 @@ export class Products extends Component {
         const section6 = e.target.elements.section6.value;
         const section7 = e.target.elements.section7.value;
         const section8 = e.target.elements.section8.value;
-        const bodyFormData = {
-            'section1': section1,
-            'section2': section2,
-            'section3': section3,
-            'section4': section4,
-            'section5': section5,
-            'section6': section6,
-            'section7': section7,
-            'section8': section8
-        }
+
+        var bodyFormData = new FormData();
+        bodyFormData.set('section1', section1)
+        bodyFormData.set('section2', section2)
+        bodyFormData.set('section3', section3)
+        bodyFormData.set('section4', section4)
+        bodyFormData.set('section5', section5)
+        bodyFormData.set('section6', section6)
+        bodyFormData.set('section7', section7)
+        bodyFormData.set('section8', section8)
+
+        // const bodyFormData = {
+        //     'section1': section1,
+        //     'section2': section2,
+        //     'section3': section3,
+        //     'section4': section4,
+        //     'section5': section5,
+        //     'section6': section6,
+        //     'section7': section7,
+        //     'section8': section8
+        // }
         const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -53,25 +64,28 @@ export class Products extends Component {
 
         // axios.post('http://127.0.0.1:5000/',data);
         // const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        axios.post('https://sectionanalysistest.herokuapp.com',{
-            'section1': section1,
-            'section2': section2,
-            'section3': section3,
-            'section4': section4,
-            'section5': section5,
-            'section6': section6,
-            'section7': section7,
-            'section8': section8
-        },{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
-        ).then(function (response) {
-                debugger;
-                //handle success
-                console.log(response);
-            }).catch(function (response) {
-                //handle error
-                debugger;
-                console.log(response);
-            });
+        const response = await axios({
+        method: 'post',
+        url: 'https://sectionanalysistest.herokuapp.com/',
+        data: bodyFormData,
+        headers: {
+        'content-type': `multipart/form-data; boundary=${bodyFormData._boundary}`,
+        },
+    });
+        console.log(response)
+
+        // axios.post('https://sectionanalysistest.herokuapp.com',
+        //     {bodyFormData },
+        //     {headers: {'Content-Type': 'multipart/form-data'}}
+        // ).then(function (response) {
+        //         debugger;
+        //         //handle success
+        //         console.log(response);
+        //     }).catch(function (response) {
+        //         //handle error
+        //         debugger;
+        //         console.log(response);
+        //     });
         debugger;
     }
 
