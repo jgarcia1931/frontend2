@@ -18,15 +18,15 @@ class WeatherApp extends React.Component {
         error: undefined
     }
 
-    getArdi = async () => {
-        const arduino_call = fetch("http://192.168.1.82:80", {method: "POST", headers: {'content-type': 'application/json'},
-            body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue'})})
-
-        // const arduino_call = fetch('https://mywebsite.com/endpoint/',
-        //     {method: 'POST',
-        //         headers: {'Accept': 'application/json', 'Content-Type': 'application/json',},
-        //         body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue',})})
-    }
+    // getArdi = async () => {
+    //     const arduino_call = fetch("http://192.168.1.82:80", {method: "POST", headers: {'content-type': 'application/json'},
+    //         body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue'})})
+    //
+    //     // const arduino_call = fetch('https://mywebsite.com/endpoint/',
+    //     //     {method: 'POST',
+    //     //         headers: {'Accept': 'application/json', 'Content-Type': 'application/json',},
+    //     //         body: JSON.stringify({firstParam: 'yourValue', secondParam: 'yourOtherValue',})})
+    // }
 
     getWeather = async (e) => {
         e.preventDefault();
@@ -56,8 +56,6 @@ class WeatherApp extends React.Component {
                 error: "Please Enter a City and Country"
             })
         }
-
-
     }
 
 

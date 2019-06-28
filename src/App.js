@@ -8,6 +8,9 @@ import { BrowserRouter, Route} from "react-router-dom";
 import {Header} from "./components/Header";
 import Container from "react-bootstrap/Container";
 import {Products} from "./components/analysis/Products";
+import {IrisApp} from "./components/irisflower/IrisApp.js";
+
+
 
 class App extends Component {
 
@@ -20,6 +23,7 @@ class App extends Component {
                     <Header/>
                     <Route exact path={"/"} component={Posts}/>
                     <Route exact path={"/analysis"} component={Products}/>
+                    <Route exact path={"/iris"} component={IrisApp}/>
                     <Route exact path={"/post/:id"} component={PostPage}/>
                 </Fragment>
             </BrowserRouter>

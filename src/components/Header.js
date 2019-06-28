@@ -26,11 +26,13 @@ export class Header extends Component{
                             <li>
                                 <Link to={'/analysis'}>Analysis</Link>
                             </li>
+                            <li>
+                                <Link to={'/iris'}>IrisFlower</Link>
+                            </li>
                         </ul>
                     </nav>
 
                 </section>
-                {/*<Image src="/Users/manuel/Desktop/blog/frontend2/src/images/Picture1.jpg" className="img-fluid"/>*/}
 
 
             </div>

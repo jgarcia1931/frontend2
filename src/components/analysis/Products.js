@@ -1,240 +1,151 @@
 import React, { Component } from "react";
 import '../../main.css';
+import Plot from 'react-plotly.js';
 import Container from "react-bootstrap/Container";
+import axios from "axios";
 
 export class Products extends Component {
-
-  constructor(props) {
-    super(props);
-
-    //  this.state.products = [];
-    this.state = {};
-    this.state.filterText = "";
-    this.state.products = [
-      {
-        id: 1,
-        category: 'Sporting Goods',
-        price: '49.99',
-        qty: 12,
-        name: 'football'
-      }, {
-        id: 2,
-        category: 'Sporting Goods',
-        price: '9.99',
-        qty: 15,
-        name: 'baseball'
-      }, {
-        id: 3,
-        category: 'Sporting Goods',
-        price: '29.99',
-        qty: 14,
-        name: 'basketball'
-      }, {
-        id: 4,
-        category: 'Electronics',
-        price: '99.99',
-        qty: 34,
-        name: 'iPod Touch'
-      }, {
-        id: 5,
-        category: 'Electronics',
-        price: '399.99',
-        qty: 12,
-        name: 'iPhone 5'
-      }, {
-        id: 6,
-        category: 'Electronics',
-        price: '199.99',
-        qty: 23,
-        name: 'nexus 7'
-      }
-    ];
-
-  }
-
-  handleUserInput(filterText) {
-    this.setState({filterText: filterText});
-  };
-
-  handleRowDel(product) {
-    var index = this.state.products.indexOf(product);
-    this.state.products.splice(index, 1);
-    this.setState(this.state.products);
-  };
-
-  handleAddEvent(evt) {
-    var id = (+ new Date() + Math.floor(Math.random() * 999999)).toString(36);
-    var product = {
-      id: id,
-      name: "",
-      price: "",
-      category: "",
-      qty: 0
+        constructor(props) {
+        super(props);
+        this.state = {
+            'Lower': undefined,
+            'MirroredProps': undefined,
+            'OriginalShape': undefined,
+            'Upper': undefined,
+            section1: [[0   ,  0], 0, 0],
+            section2: [[0   ,  0], 0, 0],
+            section3: [[0   ,  0], 0, 0],
+            section4: [[0   ,  0], 0, 0],
+            section5: [[0   ,  0], 0, 0],
+            section6: [[0   ,  0], 0, 0],
+            section7: [[0   ,  0], 0, 0],
+            section8: [[0   ,  0], 0, 0]
+        };
     }
-    this.state.products.push(product);
-    this.setState(this.state.products);
 
-  }
+    // Life cycle method where you make initial request
+    getSectAnalysis = async (e) => {
+            debugger;
+        e.preventDefault();
+        const section1 = e.target.elements.section1.value;
+        const section2 = e.target.elements.section2.value;
+        const section3 = e.target.elements.section3.value;
+        const section4 = e.target.elements.section4.value;
+        const section5 = e.target.elements.section5.value;
+        const section6 = e.target.elements.section6.value;
+        const section7 = e.target.elements.section7.value;
+        const section8 = e.target.elements.section8.value;
+        const bodyFormData = {
+            'section1': section1,
+            'section2': section2,
+            'section3': section3,
+            'section4': section4,
+            'section5': section5,
+            'section6': section6,
+            'section7': section7,
+            'section8': section8
+        }
+        const config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }
 
-  handleProductTable(evt) {
-    var item = {
-      id: evt.target.id,
-      name: evt.target.name,
-      value: evt.target.value
-    };
-var products = this.state.products.slice();
-  var newProducts = products.map(function(product) {
-
-    for (var key in product) {
-      if (key == item.name && product.id == item.id) {
-        product[key] = item.value;
-
-      }
+        // axios.post('http://127.0.0.1:5000/',data);
+        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        axios.post('https://sectionanalysistest.herokuapp.com',{
+            'section1': section1,
+            'section2': section2,
+            'section3': section3,
+            'section4': section4,
+            'section5': section5,
+            'section6': section6,
+            'section7': section7,
+            'section8': section8
+        },{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+        ).then(function (response) {
+                debugger;
+                //handle success
+                console.log(response);
+            }).catch(function (response) {
+                //handle error
+                debugger;
+                console.log(response);
+            });
+        debugger;
     }
-    return product;
-  });
-    this.setState({products:newProducts});
-  //  console.log(this.state.products);
-  };
-  render() {
 
-    return (
-
-      <Container className=" text-body align-self-center col-lg-7">
-        {/*<SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>*/}
-        <ProductTable
-            onProductTableUpdate={this.handleProductTable.bind(this)}
-            onRowAdd={this.handleAddEvent.bind(this)}
-            onRowDel={this.handleRowDel.bind(this)}
-            products={this.state.products}
-            filterText={this.state.filterText}/>
-      </Container>
-    );
-
-  }
-
+    render() {
+        return (
+            <Container>
+                <h1>Testing Plots</h1>
+                <form onSubmit={this.getSectAnalysis}>
+                    <div>
+                        <input type="text" name="section1" placeholder="section1..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section2" placeholder="section2..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section3" placeholder="section3..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section4" placeholder="section4..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section5" placeholder="section5..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section6" placeholder="section6..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section7" placeholder="section7..." />
+                    </div>
+                    <div>
+                        <input type="text" name="section8" placeholder="section8..." />
+                    </div>
+                    <button>Get Weather</button>
+                </form>
+                <Plot
+                    // data={[{
+                    //     x: [1.5, 4.5],
+                    //     y: [0.75, 0.75],
+                    //     text: ['Unfilled Rectangle', 'Filled Rectangle'],
+                    //     mode: 'text'}]}
+                    layout=
+                        {{
+                            title: 'Original Section',
+                            xaxis: {range: [0, 7], showgrid: false},
+                            yaxis: {range: [0, 3.5]},
+                            width: 500,
+                            height: 500,
+                            shapes: [
+                                {
+                                    type: 'rect',
+                                    x0: 1,
+                                    y0: 1,
+                                    x1: 2,
+                                    y1: 3,
+                                    line: {color: 'rgba(128, 0, 128, 1)'}},
+                                {
+                                    type: 'rect',
+                                    x0: 3,
+                                    y0: 1,
+                                    x1: 6,
+                                    y1: 2,
+                                    line: {color: 'rgba(128, 0, 128, 1)', width: 2},
+                                    fillcolor: 'rgba(128, 0, 128, 0.7)'}
+                                ]
+                        }}
+                />
+            </Container>
+        );
+    }
 }
 
-// export class SearchBar extends Component {
-//   handleChange() {
-//     this.props.onUserInput(this.refs.filterTextInput.value);
-//   }
-//   render() {
-//     return (
-//       <div>
-//
-//         <input type="text" placeholder="Search..." value={this.props.filterText} ref="filterTextInput" onChange={this.handleChange.bind(this)}/>
-//
-//       </div>
-//
-//     );
-//   }
-//
-// }
+export default Products
 
-export class ProductTable extends Component {
 
-  render() {
-    var onProductTableUpdate = this.props.onProductTableUpdate;
-    var rowDel = this.props.onRowDel;
-    var filterText = this.props.filterText;
-    var product = this.props.products.map(function(product) {
-      if (product.name.indexOf(filterText) === -1) {
-        return;
-      }
-      return (
-          <ProductRow
-              onProductTableUpdate={onProductTableUpdate}
-              product={product}
-              onDelEvent={rowDel.bind(this)}
-              key={product.id}/>
-      );
-    });
-    return (
-        <div>
-          <button
-              type="button"
-              onClick={this.props.onRowAdd}
-              className="btn btn-success pull-right">
-            Add
-          </button>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>price</th>
-                <th>quantity</th>
-                <th>category</th>
-              </tr>
-            </thead>
-            <tbody>
-              {product}
-            </tbody>
-          </table>
-      </div>
-    );
-
-  }
-
-}
-
-export class ProductRow extends Component {
-  onDelEvent() {
-    this.props.onDelEvent(this.props.product);
-
-  }
-
-  render() {
-
-    return (
-      <tr className="eachRow">
-        <EditableCell onProductTableUpdate={this.props.onProductTableUpdate} cellData={{
-          "type": "name",
-          value: this.props.product.name,
-          id: this.props.product.id
-        }}/>
-        <EditableCell onProductTableUpdate={this.props.onProductTableUpdate} cellData={{
-          type: "price",
-          value: this.props.product.price,
-          id: this.props.product.id
-        }}/>
-        <EditableCell onProductTableUpdate={this.props.onProductTableUpdate} cellData={{
-          type: "qty",
-          value: this.props.product.qty,
-          id: this.props.product.id
-        }}/>
-        <EditableCell onProductTableUpdate={this.props.onProductTableUpdate} cellData={{
-          type: "category",
-          value: this.props.product.category,
-          id: this.props.product.id
-        }}/>
-        <td className="del-cell">
-          <input type="button" onClick={this.onDelEvent.bind(this)} value="X" className="del-btn"/>
-        </td>
-      </tr>
-    );
-
-  }
-
-}
-
-export class EditableCell extends Component {
-
-  render() {
-    return (
-      <td>
-        <input
-            type='text'
-            name={this.props.cellData.type}
-            id={this.props.cellData.id}
-            value={this.props.cellData.value}
-            onChange={this.props.onProductTableUpdate}/>
-      </td>
-    );
-
-  }
-
-}
 
 
 
