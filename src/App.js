@@ -20,7 +20,7 @@ class App extends Component {
                     <Header/>
                     <Route exact path={"/"} component={Posts}/>
                     <Route exact path={"/analysis"} component={Products}/>
-                    <Route exact path={"/iris"} component={IrisApp}/>
+                    {/*<Route exact path={"/iris"} component={IrisApp}/>*/}
                     <Route exact path={"/post/:id"} component={PostPage}/>
                 </Fragment>
             </BrowserRouter>
