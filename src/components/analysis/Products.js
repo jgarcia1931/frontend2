@@ -240,7 +240,7 @@ export class Products extends Component {
                         <div>
                             <input type="text" name="section8" placeholder="[[0.0,  0.0], 0.0, 0.0]"/>
                         </div>
-                        <button>Get Weather</button>
+                        <button>Get Section Props</button>
                     </form>
                     <Plot
                         // data={[{
@@ -356,7 +356,7 @@ export class Products extends Component {
                     <Plot
                         layout=
                             {{
-                                title: 'Upper Section',
+                                title: 'Lower Section',
                                 xaxis: {range: [0, 10], showgrid: false},
                                 yaxis: {range: [0, 10]},
                                 width: 500,
