@@ -89,17 +89,6 @@ export class Products extends Component {
                 console.log(error);
             });
 
-
-        // console.log(response)
-        // this.setState({
-        //             Lower: response.data.analysis.Lower,
-        //             MirroredProps: response.data.analysis.MirroredProps,
-        //             OriginalShape: response.data.analysis.OriginalShape,
-        //             Upper: response.data.analysis.Upper,
-        //             isLoaded: true
-        //         });
-
-        // debugger;
     };
     render() {
         var OriginalShapecnt = -1
@@ -214,7 +203,8 @@ export class Products extends Component {
             return (
 
                 <Container>
-                    <h1>test</h1>
+                    <h1>Section Properties</h1>
+                    <p>[[x coord, y-coord] base, height]</p>
                     <form onSubmit={this.getSectAnalysis}>
                         <div>
                             <input type="text" name="section1" placeholder="[[0.0,  0.0], 0.0, 0.0]"/>
@@ -422,7 +412,7 @@ export class Products extends Component {
                         <div>
                             <input type="text" name="section8" placeholder="[[0.0,  0.0], 0.0, 0.0]"/>
                         </div>
-                        <button>Get Weather</button>
+                        <button>Get Section Props</button>
                     </form>
                     <Plot
                         // data={[{
