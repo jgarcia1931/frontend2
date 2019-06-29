@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f8d5d62-eb4f-42f4-88b0-4a726fc68554" name="Default Changelist" comment="added state to links">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/analysis/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/analysis/Products.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="67">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -27,12 +28,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="36" column="12" selection-start-line="36" selection-end-line="37" />
+            <state relative-caret-position="143">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#226#276#0" />
-                <element signature="e#776#1009#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PostPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="751">
+              <caret line="85" column="30" selection-start-line="85" selection-end-line="86" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+                <element signature="n#!!block;n#testFunc#0;n#!!block;n#render#0;n#PostPage#0" />
               </folding>
             </state>
           </provider>
@@ -41,12 +54,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/analysis/Products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
+            <state relative-caret-position="275">
+              <caret line="389" column="22" lean-forward="true" selection-start-line="389" selection-start-column="22" selection-end-line="389" selection-end-column="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#3915#11573#0" />
-                <element signature="e#4280#8236#0" />
+                <element signature="n#!!block;n#testFunc1#0;n#!!block;n#render#0;n#Products#0" />
+                <element signature="n#!!block;n#testFunc1#1;n#!!block;n#render#0;n#Products#0" />
+                <element signature="n#!!block;n#testFunc1#2;n#!!block;n#render#0;n#Products#0" />
+                <element signature="e#7061#7783#0" />
+                <element signature="n#!!block;n#testFunc1#4;n#!!block;n#render#0;n#Products#0" />
+                <element signature="e#3981#5328#0" />
+                <element signature="e#4306#4317#0" />
+                <element signature="e#7250#13311#0" />
+                <element signature="e#13593#20005#0" />
+                <element signature="e#17818#18267#0" />
+                <element signature="e#11717#15012#0" />
+                <element signature="e#11783#13195#0" />
+                <element signature="e#13269#13726#0" />
+                <element signature="e#13812#14356#0" />
               </folding>
             </state>
           </provider>
@@ -55,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PostItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
+            <state relative-caret-position="124">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -77,11 +102,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>source-url</find>
-      <find>state</find>
       <find>title</find>
       <find>ReactHtmlParser</find>
-      <find>debugger</find>
       <find>id</find>
       <find>overlay</find>
       <find>images</find>
@@ -107,9 +129,15 @@
       <find>EditableCell</find>
       <find>api_call</find>
       <find>Access-cont</find>
+      <find>debugger</find>
+      <find>mirro</find>
+      <find>OriginalShape</find>
     </findStrings>
     <replaceStrings>
       <replace>fronts</replace>
+      <replace>Lower</replace>
+      <replace>UpperMirroredProps</replace>
+      <replace>LowerMirroredProps</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/components</dir>
@@ -336,7 +364,7 @@
       <workItem from="1561733022487" duration="11832000" />
       <workItem from="1561748307475" duration="2085000" />
       <workItem from="1561751560650" duration="5226000" />
-      <workItem from="1561759069338" duration="3690000" />
+      <workItem from="1561759069338" duration="7614000" />
     </task>
     <task id="LOCAL-00001" summary="ready">
       <created>1560401015110</created>
@@ -517,7 +545,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132986000" />
+    <option name="totallyTimeSpent" value="136910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -585,6 +613,21 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>newarray[0]</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>newarray</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>shapearray</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>e.target.elements.section5.value ? section3 = &quot;yes&quot; : section3 = &quot;No&quot;</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -611,21 +654,6 @@
       </expression>
       <expression>
         <expression-string>OriginalShape.geom[0][0][0]</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>OriginalShape.geom[0][0]</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>OriginalShape.geom.0</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>OriginalShape.geom</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -682,9 +710,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/paragraphItem.js" />
     <entry file="http://localhost:3000/static/js/main.chunk.js">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
-    <entry file="http://localhost:3000/Users/manuel/Desktop/blog/frontend2/webpack/bootstrap">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/images/banner.jpg" />
@@ -887,52 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PostPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="n#!!block;n#testFunc#0;n#!!block;n#render#0;n#PostPage#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="36" column="12" selection-start-line="36" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#226#276#0" />
-            <element signature="e#776#1009#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Weather.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PostItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -950,14 +933,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/analysis/Products.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
+        <state relative-caret-position="143">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#3915#11573#0" />
-            <element signature="e#4280#8236#0" />
+            <element signature="e#226#276#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:3000/Users/manuel/Desktop/blog/frontend2/webpack/bootstrap">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PostPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="85" column="30" selection-start-line="85" selection-end-line="86" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="n#!!block;n#testFunc#0;n#!!block;n#render#0;n#PostPage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PostItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/analysis/Products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="389" column="22" lean-forward="true" selection-start-line="389" selection-start-column="22" selection-end-line="389" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#testFunc1#0;n#!!block;n#render#0;n#Products#0" />
+            <element signature="n#!!block;n#testFunc1#1;n#!!block;n#render#0;n#Products#0" />
+            <element signature="n#!!block;n#testFunc1#2;n#!!block;n#render#0;n#Products#0" />
+            <element signature="e#7061#7783#0" />
+            <element signature="n#!!block;n#testFunc1#4;n#!!block;n#render#0;n#Products#0" />
+            <element signature="e#3981#5328#0" />
+            <element signature="e#4306#4317#0" />
+            <element signature="e#7250#13311#0" />
+            <element signature="e#13593#20005#0" />
+            <element signature="e#17818#18267#0" />
+            <element signature="e#11717#15012#0" />
+            <element signature="e#11783#13195#0" />
+            <element signature="e#13269#13726#0" />
+            <element signature="e#13812#14356#0" />
           </folding>
         </state>
       </provider>
