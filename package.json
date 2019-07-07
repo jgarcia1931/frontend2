@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "fabric": "^3.2.0",
+    "jquery": "^1.9.1",
     "plotly.js": "^1.48.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -36,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^3.5.2"
   }
 }
