@@ -26,9 +26,6 @@ export class Header extends Component{
                             <li>
                                 <Link to={'/canvas'}>Canvas</Link>
                             </li>
-                            {/*<li>*/}
-                                {/*<Link to={'/iris'}>IrisFlower</Link>*/}
-                            {/*</li>*/}
                         </ul>
                     </nav>
 

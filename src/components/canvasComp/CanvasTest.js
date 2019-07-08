@@ -1,6 +1,7 @@
 import React from "react";
 import { fabric } from "fabric";
 import {Container, Row, Col} from "react-bootstrap";
+import pug from '../../images/pug.png'
 // import fabric from 'react-fabricjs';
 // const fabric = window.fabric;
 
@@ -9,7 +10,7 @@ export class CanvasTest extends React.Component {
         super(props);
         this.state = {
             left: 0,
-            top: 200,
+            top: 0,
             width: 100,
             height: 100,
             angle: 0,
@@ -17,8 +18,11 @@ export class CanvasTest extends React.Component {
             scaleY: 1,
             skewX: 0,
             skewY: 0,
+            opacity: 1,
             canvas: "",
             rect: "",
+            imgInstance:"",
+            urlvall: "",
             canvasChange: false
         }
         this.handleChange = this.handleChange.bind(this);
@@ -51,15 +55,17 @@ export class CanvasTest extends React.Component {
         e.preventDefault();
         debugger;
 
-        var leftval = e.target.name == "leftval"      ? parseInt(e.target.value) : this.state.left
-        var topval  = e.target.name == "topval"       ? parseInt(e.target.value) : this.state.top
-        var widthval = e.target.name == "widthval"    ? parseInt(e.target.value) : this.state.width
-        var heightval  = e.target.name == "heightval" ? parseInt(e.target.value) : this.state.height
-        var angleval = e.target.name == "angleval"    ? parseInt(e.target.value) : this.state.angle
-        var scaleXval  = e.target.name == "scaleXval" ? parseFloat(e.target.value) : this.state.scaleX
-        var scaleYval  = e.target.name == "scaleYval" ? parseFloat(e.target.value) : this.state.scaleY
-        var skewXval = e.target.name == "skewXval"    ? parseInt(e.target.value) : this.state.skewX
-        var skewYval  = e.target.name == "skewYval"   ? parseInt(e.target.value) : this.state.skewY
+        var leftval = e.target.name == "leftval"          ? parseInt(e.target.value) : this.state.left
+        var topval  = e.target.name == "topval"           ? parseInt(e.target.value) : this.state.top
+        var widthval = e.target.name == "widthval"        ? parseInt(e.target.value) : this.state.width
+        var heightval  = e.target.name == "heightval"     ? parseInt(e.target.value) : this.state.height
+        var angleval = e.target.name == "angleval"        ? parseInt(e.target.value) : this.state.angle
+        var scaleXval  = e.target.name == "scaleXval"     ? parseFloat(e.target.value) : this.state.scaleX
+        var scaleYval  = e.target.name == "scaleYval"     ? parseFloat(e.target.value) : this.state.scaleY
+        var skewXval = e.target.name == "skewXval"        ? parseInt(e.target.value) : this.state.skewX
+        var skewYval  = e.target.name == "skewYval"       ? parseInt(e.target.value) : this.state.skewY
+        var opacityval  = e.target.name == "opacityval"   ? parseInt(e.target.value) : this.state.opacity
+        var urlval    = e.target.innerText == "Add"  ? e.target.elements.imageadd.value : ""
 
         this.setState( {
             left: leftval,
@@ -71,17 +77,16 @@ export class CanvasTest extends React.Component {
             scaleY: scaleYval,
             skewX: skewXval,
             skewY: skewYval,
+            opacity: opacityval,
+            urlval: urlval,
             canvasChange: true
         });
-        // console.log(this.state.left)
-        // const canvas1 = new fabric.Canvas('c');
-        // canvas1.add(this.state.rect);
-        // this.state.rect.set({left: leftval  });
-        // canvas1.renderAll();
+
     }
 
     testFunc(){
             var canvas1 = new fabric.Canvas('c');
+
             var rect = new fabric.Rect({
                 left: this.state.left,
                 top: this.state.top,
@@ -96,9 +101,25 @@ export class CanvasTest extends React.Component {
             this.setState({
                 rect: rect,
                 canvas: canvas1
-            })
-            debugger;
-            canvas1.add(rect);
+            });
+            canvas1.add( rect);
+
+            // var imgElement = document.getElementById(pug);
+            // var imgInstance = new fabric.Image.fromURL('https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjrz7X2nKTjAhVLK80KHRbQDOUQjRx6BAgBEAU&url=https%3A%2F%2Fgoldbar.americanlisted.com%2Fpets-animals%2Fpugs%2F&psig=AOvVaw3R6oXfgr6XRhaNhZBC3lga&ust=1562637622064892');
+            // imgInstance.
+            // this.setState({
+            //     imgInstance: imgInstance,
+            //     canvas: canvas1
+            // });
+            //
+            // debugger;
+            // canvas1.add( imgInstance);
+
+        // fabric.Image.fromURL('https://i.pinimg.com/474x/69/8f/79/698f79b91464d705980c616987c62208--drawings-of-cats-animal-drawings.jpg', function(img) {
+        //   var img1 = img.scale(0.1).set({ left: 100, top: 100 });
+        //
+        //       canvas1.add(new fabric.Group([ img1], { left: 200, top: 200 }))
+        // });
     }
 
     render() {
@@ -121,22 +142,17 @@ export class CanvasTest extends React.Component {
                 scaleY: this.state.scaleY,
                 skewX: this.state.skewX,
                 skewY: this.state.skewY,
+                opacity: this.state.opacity
             });
             canvas1.renderAll();
 
-            // var canvas1 = new fabric.Canvas('c');
-            // var rect = new fabric.Rect({
-            //     left: this.state.left,
-            //     top: this.state.top,
-            //     fill: 'red',
-            //     width: this.state.width,
-            //     height: this.state.height,
-            //     angle: this.state.angle,
-            //     scaleX: this.state.scaleX,
-            //     skewX: this.state.skewX,
-            //     skewY: this.state.skewY
-            // });
-            // canvas1.add(rect);
+            if (this.state.urlval != "") {
+                fabric.Image.fromURL(this.state.urlval, function (img) {
+                    var img1 = img.scale(0.1).set({left: 100, top: 100});
+                    canvas1.add(new fabric.Group([img1], {left: 200, top: 200}))
+                });
+            }
+
         }
         return (
             <Container>
@@ -164,6 +180,9 @@ export class CanvasTest extends React.Component {
                         <hr/>
                         <span>Skew Y </span>
                         <hr/>
+                        <span>Opacity</span>
+                        <hr/>
+                        <span>URL Input</span>
                     </Col>
                     <Col className="align-self-center" md={2.5}>
                         <input name="leftval" type="range" min="0" max={400 - width} step="1" defaultValue={this.state.left} onChange={this.handleChange}/>
@@ -184,15 +203,13 @@ export class CanvasTest extends React.Component {
                         <hr/>
                         <input name="skewYval" type="range" min="0" max="100" step="1" defaultValue={this.state.skewY} onChange={this.handleChange}/>
                         <hr/>
+                        <input name="opacityval" type="range" min="0" max="100" step="1" defaultValue={this.state.opacity} onChange={this.handleChange}/>
+                        <hr/>
 
-                        {/*<form onSubmit={this.handleChange}>*/}
-                            {/*<input type="text" name="leftval" placeholder="left.."/>*/}
-                            {/*<button>Get</button>*/}
-                        {/*</form>*/}
-                        {/*<div>*/}
-                            {/*<p>The left point: {left}</p>*/}
-                        {/*</div>*/}
-
+                        <form onSubmit={this.handleChange}>
+                            <input type="text" name="imageadd" placeholder="addimage.."/>
+                            <button>Add</button>
+                        </form>
                     </Col>
                 </Row>
                 <hr/>
