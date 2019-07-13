@@ -104,22 +104,6 @@ export class CanvasTest extends React.Component {
             });
             canvas1.add( rect);
 
-            // var imgElement = document.getElementById(pug);
-            // var imgInstance = new fabric.Image.fromURL('https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjrz7X2nKTjAhVLK80KHRbQDOUQjRx6BAgBEAU&url=https%3A%2F%2Fgoldbar.americanlisted.com%2Fpets-animals%2Fpugs%2F&psig=AOvVaw3R6oXfgr6XRhaNhZBC3lga&ust=1562637622064892');
-            // imgInstance.
-            // this.setState({
-            //     imgInstance: imgInstance,
-            //     canvas: canvas1
-            // });
-            //
-            // debugger;
-            // canvas1.add( imgInstance);
-
-        // fabric.Image.fromURL('https://i.pinimg.com/474x/69/8f/79/698f79b91464d705980c616987c62208--drawings-of-cats-animal-drawings.jpg', function(img) {
-        //   var img1 = img.scale(0.1).set({ left: 100, top: 100 });
-        //
-        //       canvas1.add(new fabric.Group([ img1], { left: 200, top: 200 }))
-        // });
     }
 
     render() {
